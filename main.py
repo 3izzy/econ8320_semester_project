@@ -1,8 +1,6 @@
 import requests
 import json
 import pandas as pd
-import numpy as np
-import streamlit as st
 import os
 import datetime
 
@@ -37,17 +35,7 @@ def get_datasets():
         df.to_csv(fullname, index=False)
     pass
  
- ### initialize a page intro 
-def get_data_intro():
-    file_name_list = os.path.basename(__file__)[2:-3].split("_")
-    file_name = file_name_list[0] + " " + file_name_list[1]
-    st.markdown(f"# {file_name}")
-    st.sidebar.markdown(f"# {file_name}")
 
-    df = pd.read_csv(f"data/{file_name}.csv")
-    df['year'] = pd.to_datetime(df['year'], format='%Y').dt.year
-    df['month'] = pd.to_datetime(df['month'], format='%B').dt.month_name()
-    pass
  
 def is_not_number(s):
     try:
