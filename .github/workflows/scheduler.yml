@@ -1,0 +1,26 @@
+name: Run Python Module Monthly
+
+on:
+  schedule:
+    - cron: '20 3 * * *' # At midnight on the first day of every month (UTC)
+
+jobs:
+  run-python-module:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13' # Specify your Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Python module
+      run: python -m update_data.py
