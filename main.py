@@ -16,7 +16,7 @@ def get_datasets():
     json_data = json.loads(p.text)
 
     #create a folder if it's missing
-    outdir = "./data/"
+    outdir = "data/"
     if not os.path.exists(outdir):
         os.mkdir(outdir)
 
