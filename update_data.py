@@ -7,13 +7,15 @@ import os
 import datetime
 
 
-#### to create original datasets
-def get_datasets():
+
+
+#### download datasets and append to the existing ones
+def update_datasets():
     all_series = pd.read_csv("series.csv")
     all_series_list = (list(all_series.iloc[:,0]))
     headers = {'Content-type': 'application/json'}
     cur_year = datetime.datetime.now().year
-    data = json.dumps({"seriesid": all_series_list,"startyear":str(cur_year-1), "endyear":str(cur_year)})
+    data = json.dumps({"seriesid": all_series_list,"startyear":str(cur_year), "endyear":str(cur_year)})
     p = requests.post('https://api.bls.gov/publicAPI/v1/timeseries/data/', data=data, headers=headers)
     json_data = json.loads(p.text)
 
@@ -33,31 +35,11 @@ def get_datasets():
         df['month'] = pd.to_datetime(df['periodName'], format='%B').dt.month_name()
         df.drop('periodName', axis=1, inplace=True)
         df = df[['year','month','period','value','footnotes','latest']]
-        df = df.loc[::-1]
-        df.to_csv(fullname, index=False)
+        df.loc[df['latest'] == True].to_csv(fullname, index=False, mode="a", header=False)
     pass
  
- ### initialize a page intro 
-def get_data_intro():
-    file_name_list = os.path.basename(__file__)[2:-3].split("_")
-    file_name = file_name_list[0] + " " + file_name_list[1]
-    st.markdown(f"# {file_name}")
-    st.sidebar.markdown(f"# {file_name}")
-
-    df = pd.read_csv(f"data/{file_name}.csv")
-    df['year'] = pd.to_datetime(df['year'], format='%Y').dt.year
-    df['month'] = pd.to_datetime(df['month'], format='%B').dt.month_name()
-    pass
  
-def is_not_number(s):
-    try:
-        float(s)
-        return False
-    except ValueError:
-        return True
+ 
+update_datasets()
 
-
-
-
-get_datasets()
 

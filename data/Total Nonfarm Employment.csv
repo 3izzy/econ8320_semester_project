@@ -1,24 +1,24 @@
 year,month,period,value,footnotes,latest
-2024,November,M11,159288,"[{'code': 'P', 'text': 'preliminary'}]",true
-2024,October,M10,159061,"[{'code': 'P', 'text': 'preliminary'}]",
-2024,September,M09,159025,[{}],
-2024,August,M08,158770,[{}],
-2024,July,M07,158692,[{}],
-2024,June,M06,158548,[{}],
-2024,May,M05,158430,[{}],
-2024,April,M04,158214,[{}],
-2024,March,M03,158106,[{}],
-2024,February,M02,157796,[{}],
-2024,January,M01,157560,[{}],
-2023,December,M12,157304,[{}],
-2023,November,M11,157014,[{}],
-2023,October,M10,156832,[{}],
-2023,September,M09,156667,[{}],
-2023,August,M08,156421,[{}],
-2023,July,M07,156211,[{}],
-2023,June,M06,156027,[{}],
-2023,May,M05,155787,[{}],
-2023,April,M04,155484,[{}],
-2023,March,M03,155206,[{}],
-2023,February,M02,155060,[{}],
-2023,January,M01,154773,[{}],
+2023,January,M01,154773,[{}],False
+2023,February,M02,155060,[{}],False
+2023,March,M03,155206,[{}],False
+2023,April,M04,155484,[{}],False
+2023,May,M05,155787,[{}],False
+2023,June,M06,156027,[{}],False
+2023,July,M07,156211,[{}],False
+2023,August,M08,156421,[{}],False
+2023,September,M09,156667,[{}],False
+2023,October,M10,156832,[{}],False
+2023,November,M11,157014,[{}],False
+2023,December,M12,157304,[{}],False
+2024,January,M01,157560,[{}],False
+2024,February,M02,157796,[{}],False
+2024,March,M03,158106,[{}],False
+2024,April,M04,158214,[{}],False
+2024,May,M05,158430,[{}],False
+2024,June,M06,158548,[{}],False
+2024,July,M07,158692,[{}],False
+2024,August,M08,158770,[{}],False
+2024,September,M09,159025,[{}],False
+2024,October,M10,159061,"[{'code': 'P', 'text': 'preliminary'}]",False
+2024,November,M11,159288,"[{'code': 'P', 'text': 'preliminary'}]",True
