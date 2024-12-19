@@ -46,7 +46,6 @@ if st.checkbox("Show the bar chart"):
     month_selection_bar = st.multiselect("Select months to display", df['month'].unique(), key="bar_month")
     temp_df = df.copy()
     temp_df['year'] = temp_df['year'].astype(str)
-    st.write(temp_df.head())
     p3 = px.bar(temp_df[df["year"].isin(year_selection_bar) & df["month"].isin(month_selection_bar)], 
         x="month",
         y="value",
