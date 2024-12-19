@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import os
 import plotly.express as px
-from main import get_data_intro, is_not_number
+from main import is_not_number
 
 
 
