@@ -24,7 +24,9 @@ if st.checkbox('Show raw data'):
     st.dataframe(df)
 
 
+st.markdown("Data measured in thousands")
 
+st.markdown("## Visualizations")
 ### VISUALIZATION OF DATA
 p = px.line(df, 
         x="month",
@@ -33,17 +35,15 @@ p = px.line(df,
         category_orders={"month": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]}
         ).update_layout(yaxis_title=file_name)
 
+p2 = px.histogram(df,
+                  x="value")
 
+st.markdown(f"#### How {file_name} changes overtime")
 st.plotly_chart(p)
 
 
+st.markdown(f'#### Distribution of {file_name}')
+st.plotly_chart(p2)
 
 
 
-
-# multi = """Few things I've picked up from this plot:  
-# * similar pattern of the line for both years  
-# * the rate of increase of the slope was bigger in 2023 than in 2024  
-# * overall the levels have almost converged  
-# * the overall deviation visually is within 1,000 workers"""
-# st.markdown(multi)

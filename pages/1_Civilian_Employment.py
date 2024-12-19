@@ -25,7 +25,9 @@ if st.checkbox('Show raw data'):
 
 
 
+st.markdown("Data measured in thousands")
 
+st.markdown("## Visualizations")
 ### VISUALIZATION OF DATA
 p = px.line(df, 
         x="month",
@@ -34,12 +36,11 @@ p = px.line(df,
         category_orders={"month": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]}
         ).update_layout(yaxis_title=file_name)
 
+p2 = px.histogram(df,
+                  x="value")
 
+st.markdown(f"#### How {file_name} changes overtime")
 st.plotly_chart(p)
-
-
-
-
 
 
 multi = """Few things I've picked up from this plot:  
@@ -50,9 +51,6 @@ multi = """Few things I've picked up from this plot:
 st.markdown(multi)
 
 
-
-
-
-
-
+st.markdown(f'#### Distribution of {file_name}')
+st.plotly_chart(p2)
 
